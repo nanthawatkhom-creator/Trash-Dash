@@ -1,0 +1,12 @@
+{
+  "name": "trash-dash",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Trash Dash — a colorful top-down 3D trash-sorting party game prototype",
+  "scripts": {
+    "start": "node party/server.mjs",
+    "test": "node --test party/rules.test.mjs",
+    "check": "node --check party/game.js"
+  },
+  "engines": {"node": ">=22"}
+}

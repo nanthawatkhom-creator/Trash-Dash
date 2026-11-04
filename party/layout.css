@@ -1,0 +1,47 @@
+/* One layout owns the play regions: header, scores, sidebar, arena, controls. */
+body.playing{--rail:244px;--gutter:16px;--gap:12px;--header:76px;--scores:48px;--controls:48px;--arena-left:calc(var(--gutter) + var(--rail) + var(--gap));--arena-top:calc(var(--header) + var(--scores) + var(--gap))}
+.playing.touch-enabled{--controls:96px}
+.playing .topbar{height:var(--header);padding:12px var(--gutter);gap:12px}
+.playing .top-actions{flex-shrink:0;gap:8px}
+.playing .brand{font-size:20px}
+.playing .brand-icon{font-size:30px}
+.playing .brand small{font-size:8px}
+.playing #world{inset:var(--arena-top) var(--gutter) calc(var(--controls) + var(--gutter)) var(--arena-left);overflow:hidden;border-radius:16px}
+.playing .vignette{display:none}
+.playing .hud{position:absolute;inset:var(--header) var(--gutter) auto var(--arena-left);height:var(--scores);padding:0}
+.playing .scoreboards{height:100%;gap:8px;align-items:stretch;overflow:hidden}
+.playing .score-card{flex:1;max-width:none;min-width:0;min-height:0;margin:0;padding:5px 10px;border-radius:10px;gap:7px}
+.playing .score-card b{font-size:11px}
+.playing .score-card small{font-size:8px}
+.playing .score-card strong{font-size:22px}
+.playing .score-card .avatar{font-size:23px}
+.playing .score-card:only-child{flex:0 1 190px}
+.playing .timer{position:fixed;inset:12px auto auto 50%;width:122px;transform:translateX(-50%);padding:5px 16px 8px;border-radius:12px;z-index:4;animation:none}
+.playing .timer small{font-size:9px}
+.playing .timer strong{font-size:26px}
+.playing .player-panel{position:absolute;inset:calc(var(--header) + 0px) auto var(--gutter) var(--gutter);width:var(--rail);height:auto;max-height:none;margin:0;padding:0 2px 4px 0;gap:10px;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+.playing .wave-card,.playing .carry-hud{flex-shrink:0;min-width:0;margin:0}
+.playing .player-panel .carry-hud{position:relative;inset:auto;transform:none;width:100%;white-space:normal}
+.playing .wave-card .event{position:static;inset:auto;transform:none;display:block;max-width:100%;width:auto;margin:10px 0 0;padding:8px 9px;background:#e7efdb;color:#41633b;border:1px solid #d4e2c6;border-radius:8px;box-shadow:none;font-size:11px;line-height:1.6;white-space:normal;font-weight:600;animation:none}
+.playing .wave-card .countdown{position:static;inset:auto;transform:none;margin:10px 0 0;padding:6px;background:#e7efdb;border-radius:8px;font-size:28px;line-height:1.2;color:#36784f;-webkit-text-stroke:0;text-shadow:none;text-align:center;animation:none}
+.playing .aim-hint{display:none!important}
+.playing .play-controls{position:absolute;inset:auto var(--gutter) var(--gutter) var(--arena-left);height:calc(var(--controls) - 8px);width:auto;transform:none;justify-content:center;gap:16px;overflow:hidden;border-radius:10px;white-space:normal;flex-wrap:wrap;padding:6px 10px;font-size:10px}
+.playing.touch-enabled .play-controls{display:none}
+.playing .touch{position:absolute;inset:auto var(--gutter) var(--gutter) var(--arena-left);height:calc(var(--controls) - 8px);pointer-events:none;align-items:center;justify-content:space-between;gap:8px}
+.playing .joystick{width:76px;height:76px;flex-shrink:0}
+.playing .joystick i{left:16px;top:16px}
+.playing .touch-actions{align-items:center;gap:8px}
+.playing .touch-actions button{width:64px;height:64px;font-size:11px}
+.playing .touch-actions #touch-dash{width:46px;height:46px;font-size:19px}
+.playing .bin-name{z-index:0;max-width:80px}
+@media(max-width:1000px){body.playing{--rail:210px}.playing .score-card{padding:4px 6px;gap:5px}.playing .score-card .avatar{font-size:20px}.playing .score-card strong{font-size:19px}.playing .brand{font-size:17px}.playing .brand small{display:none}.playing .play-controls b{display:none}}
+@media(max-width:700px){body.playing{--rail:145px;--gutter:10px;--gap:10px;--header:62px;--scores:40px}.playing .timer{inset:8px auto auto 50%;width:98px;padding:4px 10px 7px;transform:translateX(-50%)}.playing .timer small{font-size:8px}.playing .timer strong{font-size:22px}.playing .score-card{padding:3px 5px;gap:3px;border-radius:8px}.playing .score-card .avatar{font-size:17px}.playing .score-card b{font-size:9px}.playing .score-card small{font-size:7px;margin:0}.playing .score-card strong{font-size:17px}.playing .score-card:only-child{flex:1;max-width:150px}.playing .wave-card{padding:10px}.playing .wave-card .event{font-size:10px}.playing .player-panel .carry-hud{padding:10px}.playing .brand>span:last-child{display:none}.playing .brand-icon{font-size:28px}.playing .icon-button{width:28px;height:28px;font-size:16px}.playing .top-actions{gap:5px}.playing .touch-actions button{width:50px;height:50px;font-size:9px}.playing .touch-actions #touch-dash{width:36px;height:36px;font-size:16px}.playing .joystick{width:62px;height:62px}.playing .joystick i{width:34px;height:34px;left:12px;top:12px}.playing .touch{gap:4px}.playing .touch-actions{gap:4px}.playing .wave-kicker{display:block}.playing .wave-meta{display:flex;flex-wrap:wrap}.playing .wave-markers{display:flex}}
+@media(max-width:420px){body.playing{--rail:124px;--gutter:8px;--gap:8px;--controls:118px}.playing .touch{align-items:center;flex-wrap:wrap;justify-content:center;align-content:center}.playing .joystick{width:54px;height:54px}.playing .joystick i{left:8px;top:8px}.playing .touch-actions{flex:1;justify-content:center}.playing .touch-actions button{width:44px;height:44px}.playing .touch-actions #touch-dash{width:32px;height:32px}.playing .wave-title strong{font-size:17px}.playing .player-panel h2{font-size:15px}.playing .carry-category{padding:5px;gap:5px}.playing .carry-category b{font-size:14px}.playing .score-card .avatar{display:none}.playing .score-card small{display:none}}
+@media(max-height:550px) and (min-width:701px){body.playing{--header:58px;--scores:36px;--controls:40px;--rail:190px}.playing .timer{top:5px;padding:3px 12px 6px}.playing .timer strong{font-size:22px}.playing .brand small{display:none}.playing .score-card{padding:3px 8px}.playing .player-panel{gap:8px}}
+.playing .score-card{flex-wrap:nowrap}
+@media(max-width:420px){.playing .score-card{flex-direction:column;justify-content:center;align-items:center;gap:1px;padding:2px}.playing .score-card strong{margin:0;font-size:14px;line-height:1.1}.playing .score-card b{font-size:8px;line-height:1}.playing .score-card>div{line-height:1}}
+/* Small lobbies flow vertically and scroll instead of overlapping their guide. */
+@media(max-width:700px){body:not(.playing){overflow-y:auto;overflow-x:hidden}body:not(.playing) #world{position:fixed}body:not(.playing) .vignette{position:fixed}body:not(.playing) main{position:relative;display:flex;flex-direction:column;padding-top:230px;min-height:100dvh;padding-bottom:24px}body:not(.playing) .lobby{position:relative;inset:auto;display:block;width:calc(100% - 32px);max-width:400px;margin:0 auto}body:not(.playing) .lobby h1{font-size:36px}body:not(.playing) .lobby h1 br{display:none}body:not(.playing) .lobby h1 i{display:none}body:not(.playing) .lobby .intro{display:block;margin:10px 0 16px;font-size:11px}body:not(.playing) .setup-card{padding:16px}body:not(.playing) .setup-heading{font-size:12px}body:not(.playing) .solo-mode{padding:10px;font-size:12px}body:not(.playing) .solo-mode b{font-size:12px}body:not(.playing) .solo-mode small{font-size:9px}body:not(.playing) .bot-option{font-size:11px}body:not(.playing) .round-info{font-size:9px}body:not(.playing) .primary{font-size:14px;min-height:46px}body:not(.playing) .bottom-guide{position:relative;inset:auto;width:calc(100% - 32px);max-width:400px;flex-shrink:0;margin:12px auto 0}body:not(.playing) .scene-caption,body:not(.playing) footer{display:none}}
+.playing #world.symbol-labels .bin-name{font-size:0;padding:2px;max-width:20px;line-height:1;border-radius:3px;border-width:1px}
+.playing #world.symbol-labels .bin-name::before{content:attr(data-icon);font-size:10px;white-space:nowrap}
+.playing #world.tiny-labels .bin-name:not(.selected){display:none}
